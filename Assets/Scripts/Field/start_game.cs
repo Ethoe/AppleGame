@@ -10,6 +10,7 @@ public class start_game : MonoBehaviour
     public timer timer;
     public score_keeper score;
     public bool gameInProgress;
+    public int currentSeed;
     selected_dictionary selected_table;
     private float startTime;
     private GameObject[,] field;
@@ -22,16 +23,22 @@ public class start_game : MonoBehaviour
     {
         selected_table = GetComponent<selected_dictionary>();
         field = new GameObject[width, height];
-        StartGame();
+        StartGameWithRandomSeed();
+    }
+
+    public void StartGameWithRandomSeed()
+    {
+        StartGameWithSeed(Random.Range(0, 10000000));
     }
 
     public void StartGameWithSeed(int seed)
     {
+        currentSeed = seed;
         Random.InitState(seed);
         StartGame();
     }
 
-    public void StartGame()
+    private void StartGame()
     {
         startTime = Time.fixedTime;
         ClearBoard();

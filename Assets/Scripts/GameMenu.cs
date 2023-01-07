@@ -14,12 +14,13 @@ public class GameMenu : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("Restarting Game");
-        gameMaster.StartGame();
+        gameMaster.StartGameWithRandomSeed();
     }
 
     public void StartGameSameSeed()
     {
         Debug.Log("Restarting Game With Same Seed");
+        gameMaster.StartGameWithSeed(gameMaster.currentSeed);
     }
 
     public void OpenOptions()

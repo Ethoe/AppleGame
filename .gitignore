@@ -7,5 +7,6 @@ Logs\**
 Library/
 Temp/
 Logs/
+Builds/
 *.cache
 *.csproj
