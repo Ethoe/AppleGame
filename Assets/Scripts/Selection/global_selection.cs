@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class global_selection : MonoBehaviour
 {
+    public start_game game;
     selected_dictionary selected_table;
     RaycastHit hit;
     bool dragSelect;
@@ -32,6 +33,11 @@ public class global_selection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!game.gameInProgress)
+        {
+            return;
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             p1 = Input.mousePosition;

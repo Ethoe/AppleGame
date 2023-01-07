@@ -9,18 +9,19 @@ public class start_game : MonoBehaviour
     public int gameTime = 120;
     public timer timer;
     public score_keeper score;
+    public bool gameInProgress;
     selected_dictionary selected_table;
     private float startTime;
     private GameObject[,] field;
     private int width = 17;
     private int height = 10;
-    private bool gameInProgress;
 
 
     // Start is called before the first frame update
     void Start()
     {
         selected_table = GetComponent<selected_dictionary>();
+        field = new GameObject[width, height];
         StartGame();
     }
 
@@ -33,6 +34,7 @@ public class start_game : MonoBehaviour
     public void StartGame()
     {
         startTime = Time.fixedTime;
+        ClearBoard();
         field = new GameObject[width, height];
         for (int i = 0; i < width; i++)
         {
@@ -50,6 +52,10 @@ public class start_game : MonoBehaviour
     public void GameOver()
     {
         gameInProgress = false;
+    }
+
+    public void ClearBoard()
+    {
         for (int i = 0; i <= field.GetUpperBound(0); i++)
         {
             for (int j = 0; j <= field.GetUpperBound(1); j++)

@@ -1169,6 +1169,7 @@ MonoBehaviour:
   gameTime: 120
   timer: {fileID: 1602193197}
   score: {fileID: 399520076}
+  gameInProgress: 0
 --- !u!114 &1439272271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1181,6 +1182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2837dc72237a704e88ca0b08dd96ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  game: {fileID: 1439272270}
 --- !u!114 &1439272272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1592,6 +1594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c7a07e380b180e45a50ff4949e8922e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameMaster: {fileID: 1439272270}
 --- !u!1001 &1794221274
 PrefabInstance:
   m_ObjectHideFlags: 0
