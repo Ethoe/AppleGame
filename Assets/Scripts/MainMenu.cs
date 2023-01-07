@@ -6,6 +6,13 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public string appleGame;
+    public GameObject optionsMenu;
+
+    void Start()
+    {
+        optionsMenu.SetActive(false);
+    }
+
     public void StartGame()
     {
         Debug.Log("Starting Game");
@@ -15,11 +22,20 @@ public class MainMenu : MonoBehaviour
     public void OpenOptions()
     {
         Debug.Log("Opened Options");
+        if (optionsMenu.activeSelf)
+        {
+            optionsMenu.SetActive(false);
+        }
+        else
+        {
+            optionsMenu.SetActive(true);
+        }
     }
 
     public void CloseOptions()
     {
-
+        Debug.Log("Closed Options");
+        optionsMenu.SetActive(false);
     }
 
     public void QuitGame()

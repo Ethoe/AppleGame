@@ -21,4 +21,10 @@ public class score_keeper : MonoBehaviour
         score += count;
         text.text = score.ToString();
     }
+
+    public void Restart()
+    {
+        score = 0;
+        text.text = score.ToString();
+    }
 }

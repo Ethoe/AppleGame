@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameMenu : MonoBehaviour
 {
+    public start_game gameMaster;
     public void MainMenu()
     {
         Debug.Log("Going To Main Menu");
@@ -13,6 +14,7 @@ public class GameMenu : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("Restarting Game");
+        gameMaster.StartGame();
     }
 
     public void StartGameSameSeed()
